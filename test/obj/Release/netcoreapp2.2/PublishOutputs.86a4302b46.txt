@@ -1,0 +1,6 @@
+C:\Users\KHao\source\repos\test\test\obj\Release\netcoreapp2.2\PubTmp\Out\appsettings.Development.json
+C:\Users\KHao\source\repos\test\test\obj\Release\netcoreapp2.2\PubTmp\Out\appsettings.json
+C:\Users\KHao\source\repos\test\test\obj\Release\netcoreapp2.2\PubTmp\Out\test.dll
+C:\Users\KHao\source\repos\test\test\obj\Release\netcoreapp2.2\PubTmp\Out\test.runtimeconfig.json
+C:\Users\KHao\source\repos\test\test\obj\Release\netcoreapp2.2\PubTmp\Out\test.pdb
+C:\Users\KHao\source\repos\test\test\obj\Release\netcoreapp2.2\PubTmp\Out\test.deps.json
