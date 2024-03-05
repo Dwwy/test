@@ -77,7 +77,7 @@ namespace test.Controllers
             //@WALLETTYPE = ?;", "000001", "MY27749776", 78.0, "", 1);
             //        db.executeScalarSP(sbSQL);
             //        return true;
-            return "Hi, Daniel's Test Project test#1";
+            return "Hi, Daniel's Test Project test#2";
         }
 
         // GET api/values/5
