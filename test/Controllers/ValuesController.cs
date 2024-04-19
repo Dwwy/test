@@ -7,6 +7,15 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Data.SqlClient;
 using test.Service;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace test.Controllers
 {
@@ -77,9 +86,28 @@ namespace test.Controllers
             //@WALLETTYPE = ?;", "000001", "MY27749776", 78.0, "", 1);
             //        db.executeScalarSP(sbSQL);
             //        return true;
-            return "Hi, Daniel's Test Project test#kin test111 demo1";
+            return "Hi, Daniel's Test Project Pang";
         }
 
+        [HttpPost("/generateExcel")]
+        public ActionResult<string> GenerateExcel (IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("Invalid file");
+
+            var filePath = Environment.CurrentDirectory + "\\uploads\\" + file.FileName;
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                file.CopyTo(stream);
+            }
+            Util util = new Util();
+
+            var employeeDataList = util.ReadExcel(filePath);
+            var insertQuery = util.GenerateInsertQuery(employeeDataList);
+
+            return Ok(new { InsertQuery = insertQuery });
+        }
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
